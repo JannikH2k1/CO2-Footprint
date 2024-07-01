@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2-Footprint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header1{
+            background-color: #333;
+            color: white;
+            text-align:  right;
+            padding: 10px 0;
+        }
+        header2{
+            background-color: #333;
+            color: white;
+            text-align:  center;
+            padding: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        nav {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 10px;
+        }
+        .content {
+            flex: 3;
+            min-width: 300px;
+            padding: 20px;
+            margin: 10px;
+        }
+        .menu-rtl nav {
+            order: 2; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Unser CO2-Fußabdruck</h1>
+        <a href="Website.html" aria-label="dach" data-element-type="logo" class="order-1 shrink-0 py-2 xl:py-4">
+        <img class="h-8 xl:h-12" src="safeworld.png" alt="Logo"></a>
+<header1>
+    <nav>
+        <ul class="text-end">
+          
+            <form>
+              <input type="text" name="suche" placeholder="Suche">
+            </form>     
+        </ul>
+      </nav>
+
+</header1>
+<header2>
+    <nav>
+        <ul class="text-end">
+            <b>
+            <a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            <a href="country.html">Unsere CO2-Ergebnisse (Länder)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            <a href="products.html">Unsere Produkte</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            <a href="about.html">Über uns</a>
+            </b>
+        </ul>     
+    </nav>
+</header2>
+
+<h2>Wir müssen etwas ändern! </h2>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#Vertreten durch">Vertreten durch</a></li>
+            <li><a href="#Kontakt">Kontakt</a></li>
+            <li><a href="#Bankverbindung">Bankverbindung</a></li>
+            <li><a href="#Inhalt">Verantwortlich für den Inhalt</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1><b>Impressum</b></h1>
+        <h2>Angaben gemäß § 5 TMG:</h2>
+        Hummer GmbH<br>
+        Eibenstraße 2<br>
+        65597 Hünfelden
+        
+        <h3 id="Vertreten durch">Vertreten durch:</h3>
+        Geschäftsführer: Jannik Hummer
+        
+        <h3 id="Kontakt">Kontakt:</h3>
+        Telefon: 01622335172<br>
+        E-Mail: jannik.hummer@iu-study.org
+        
+        <h3 id="Bankverbindung">Bankverbindung:</h3>
+        Kreissparkasse Limburg<br>
+        IBAN: DEXX XXXX XXXX XXXX XXXX XX
+        
+        <h3 id="Inhalt">Verantwortlich für den Inhalt nach $ 55 Abs. 2 RStV:</h3>
+        Jannik Hummer
+    </div>
+</div>
+<footer>
+So erreichen Sie uns:
+<li class="d-inline"><a href="https://www.instagram.com/jannikh2k1/">Instagram</a></li>
+      <li class="d-inline"><a href="https://www.facebook.com/profile.php?id=100011086651305">Facebook</a></li>
+      <li class="d-inline"><a href="contact.html">Kontakt</a></li> 
+</footer>
+<footer>
+    © 2024 Rechtliche Hinweise
+    <li><a href="privacy.html">Datenschutz</a></li>
+        <li><a href="imprint.html">Impressum</a></li>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const isRTL = document.documentElement.lang === "ar" || document.documentElement.lang === "he";
+        if (isRTL) {
+            document.body.classList.add("menu-rtl");
+        }
+    });
+</script>
+</body>
+</html>
