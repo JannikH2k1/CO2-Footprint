@@ -12,16 +12,21 @@
             padding: 0;
         }
         header{
+            display: flex;
+            justify-content: space-between;
             background-color: #333;
-            color: white;
-            text-align:  right;
-            padding: 10px 0;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+        }
+        header div {
+            flex: 1;
+            text-align: center;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
         }
         .container {
             display: flex;
@@ -45,25 +50,6 @@
         .menu-rtl nav {
             order: 2; 
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
@@ -72,15 +58,13 @@
         <img class="h-8 xl:h-12" src="Logos/safeworld.png" alt="Logo"></a>
 <header>
     <nav>
-        <ul class="text-end">
-            <b>
-            <a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="country.html">Unsere CO2-Ergebnisse (Länder)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="products.html">Unsere Produkte</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="about.html">Über uns</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <input type="text" name="suche" placeholder="Suche">
-            </b>
-        </ul>     
+         <b>
+            <div><a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a></div>
+            <div><a href="country.html">Unsere CO2-Ergebnisse (Länder)</a></div>
+            <div><a href="products.html">Unsere Produkte</a></div>
+            <div><a href="about.html">Über uns</a></div>
+            <div><input type="text" name="suche" placeholder="Suche"></div>
+        </b>    
     </nav>
 </header>
 

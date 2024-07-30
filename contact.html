@@ -10,23 +10,22 @@
             margin: 0;
             padding: 0;
         }
-        header1{
+        header{
+            display: flex;
+            justify-content: space-between;
             background-color: #333;
-            color: white;
-            text-align:  right;
-            padding: 10px 0;
+            color: rgb(255, 255, 255);
+            padding: 10px;
         }
-        header2{
-            background-color: #333;
-            color: white;
-            text-align:  center;
-            padding: 10px 0;
+        header div {
+            flex: 1;
+            text-align: center;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
         }
         .container {
             display: flex;
@@ -50,54 +49,23 @@
         .menu-rtl nav {
             order: 2; 
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
     <h1>Unser CO2-Fußabdruck</h1>
         <a href="Website.html" aria-label="dach" data-element-type="logo" class="order-1 shrink-0 py-2 xl:py-4">
         <img class="h-8 xl:h-12" src="Logos/safeworld.png" alt="Logo"></a>
-<header1>
+<header>
     <nav>
-        <ul class="text-end">
-          
-            <form>
-              <input type="text" name="suche" placeholder="Suche">
-            </form>     
-        </ul>
-      </nav>
-
-</header1>
-<header2>
-    <nav>
-        <ul class="text-end">
-            <b>
-            <a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="country.html">Unsere CO2-Ergebnisse (Länder)</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="products.html">Unsere Produkte</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-            <a href="about.html">Über uns</a>
-            </b>
-        </ul>     
+         <b>
+            <div><a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a></div>
+            <div><a href="country.html">Unsere CO2-Ergebnisse (Länder)</a></div>
+            <div><a href="products.html">Unsere Produkte</a></div>
+            <div><a href="about.html">Über uns</a></div>
+            <div><input type="text" name="suche" placeholder="Suche"></div>
+        </b>    
     </nav>
-</header2>
+</header>
 
 
 <div class="container">
