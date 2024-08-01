@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2-Footprint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+        }
+        header div {
+            flex: 1;
+            text-align: center;
+        }
+        #filterInput {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        nav {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 10px;
+        }
+        .content {
+            flex: 3;
+            min-width: 300px;
+            padding: 20px;
+            margin: 10px;
+        }
+        .menu-rtl nav {
+            order: 2; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .menu {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Unser CO2-Fußabdruck</h1>
+        <a href="Website.html" aria-label="dach" data-element-type="logo" class="order-1 shrink-0 py-2 xl:py-4">
+        <img class="h-8 xl:h-12" src="Logos/safeworld.png" alt="Logo"></a>
+        <header>
+            <nav>
+                 <b>
+                    <div><a href="table.html">Unsere CO2-Ergebnisse</a></div>
+                    <div><a href="products.html">Unsere Produkte</a></div>
+                    <div><a href="about.html">Über uns</a></div>
+                    <div><input type="text" id="filterInput" name="suche" placeholder="Suche" onkeyup="filterContent()"></div>
+                 </b>  
+            </nav>
+        </header>
+
+<h2>Wir müssen etwas ändern! </h2>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#Emission Firma">CO2-Emissionsdaten</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h3 id="Emission Firma">CO2-Emissionsdaten</h3>
+        <table id="emissionsTable">
+            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Suchen nach...">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Unternehmen</th>
+                    <th onclick="sortTable(1)">CO2-Emissionen Unternehmen (Millionen Tonnen)</th>
+                    <th onclick="sortTable(2)">Länder</th>
+                    <th onclick="sortTable(3)">CO2-Emissionen Länder (Millionen Tonnen)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Coal</td>
+                    <td>15 Millionen</td>
+                    <td>USA</td>
+                    <td>5060 Millionen</td>
+                </tr>
+                <tr>
+                    <td>Aramco</td>
+                    <td>60 Millionen</td>
+                    <td>Saudi-Arabien</td>
+                    <td>662 Millionen</td>
+                </tr>
+                <tr>
+                    <td>Gazprom</td>
+                    <td>43 Millionen</td>
+                    <td>Russland</td>
+                    <td>1650 Millionen</td>
+                </tr>
+                <tr>
+                    <td>China National Petroleum</td>
+                    <td>80 Millionen</td>
+                    <td>China</td>
+                    <td>11340 Millionen</td>
+                </tr>
+                <tr>
+                    <td>Thyssenkrupp</td>
+                    <td>8 Millionen</td>
+                    <td>Deutschland</td>
+                    <td>598 Millionen</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer>
+So erreichen Sie uns:
+<li class="d-inline"><a href="https://www.instagram.com/jannikh2k1/">Instagram</a></li>
+      <li class="d-inline"><a href="https://www.facebook.com/profile.php?id=100011086651305">Facebook</a></li>
+      <li class="d-inline"><a href="contact.html">Kontakt</a></li> 
+</footer>
+<footer>
+    © 2024 Rechtliche Hinweise
+    <li><a href="privacy.html">Datenschutz</a></li>
+        <li><a href="imprint.html">Impressum</a></li>
+</footer>
+
+<script>
+    function sortTable(n) {
+        const table = document.getElementById("emissionsTable");
+        let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        switching = true;
+        dir = "asc"; 
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i+1].getElementsByTagName("TD")[n];
+                if (dir === "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir === "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }   
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++; 
+            } else {
+                if (switchcount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const isRTL = document.documentElement.lang === "ar" || document.documentElement.lang === "he";
+        if (isRTL) {
+            document.body.classList.add("menu-rtl");
+        }
+    });
+
+    function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("emissionsTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 1; i < tr.length; i++) {
+        tr[i].style.display = "none";
+        td = tr[i].getElementsByTagName("td");
+        for (var j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                }
+            }
+        }
+    }
+    
+}
+
+
+</script>
+
+
+</body>
+</html>

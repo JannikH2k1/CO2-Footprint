@@ -50,6 +50,19 @@
         .menu-rtl nav {
             order: 2; 
         }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: auto;
+                position: static;  
+            }
+            .menu {
+                width: 100%;
+                height: auto;
+                position: static;
+                color: #333;
+            }
+        }
     </style>
 </head>
 <body>
@@ -58,19 +71,19 @@
         <img class="h-8 xl:h-12" src="Logos/safeworld.png" alt="Logo"></a>
 <header>
     <nav>
-         <b>
-            <div><a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a></div>
-            <div><a href="country.html">Unsere CO2-Ergebnisse (Länder)</a></div>
-            <div><a href="products.html">Unsere Produkte</a></div>
-            <div><a href="about.html">Über uns</a></div>
-            <div><input type="text" name="suche" placeholder="Suche"></div>
-        </b>    
+        <ul>
+            <b>
+                <div><a href="table.html">Unsere CO2-Ergebnisse</a></div>
+                <div><a href="products.html">Unsere Produkte</a></div>
+                <div><a href="about.html">Über uns</a></div>
+            </b>
+        </ul>    
     </nav>
 </header>
 
 <h2>Wir müssen etwas ändern! </h2>
 <div style= "width: fit-content; height: fit-content;" class="container">
-    <nav>
+    <nav id="menu" class="menu">
         <ul>
             <li><a href="#CO2-Fußabdruck?">Was ist der CO2-Fußabdruck?</a></li>
             <li><a href="#verkleinern?">Wie können wir unseren eigenen CO2-Fußabdruck verkleinern?</a></li>
@@ -125,16 +138,17 @@
         <a href="contact.html">Kontakt</a> 
         
     </div>
+    <script src="menu.js"></script>
 </div>
 <footer>
 So erreichen Sie uns:
-<li class="d-inline"><a href="https://www.instagram.com/jannikh2k1/">Instagram</a></li>
-      <li class="d-inline"><a href="https://www.facebook.com/profile.php?id=100011086651305">Facebook</a></li>
-      <li class="d-inline"><a href="contact.html">Kontakt</a></li> 
+        <li class="d-inline"><a href="https://www.instagram.com/jannikh2k1/">Instagram</a></li>
+        <li class="d-inline"><a href="https://www.facebook.com/profile.php?id=100011086651305">Facebook</a></li>
+        <li class="d-inline"><a href="contact.html">Kontakt</a></li> 
 </footer>
 <footer>
     © 2024 Rechtliche Hinweise
-    <li><a href="privacy.html">Datenschutz</a></li>
+        <li><a href="privacy.html">Datenschutz</a></li>
         <li><a href="imprint.html">Impressum</a></li>
 </footer>
 

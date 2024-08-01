@@ -3,27 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beispielseite</title>
+    <title>Globale Navigation</title>
     <style>
-        /* CSS für gleichmäßige Aufteilung */
-        header {
-            display: flex;
-            justify-content: space-between;
-            background-color: lightgray;
-            padding: 10px;
+        /* Grundlegende Stile für den gesamten Body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header div {
-            flex: 1;
-            text-align: center;
+        /* Header-Stil */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Logo-Stil */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigationsleiste */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Navigationslinks */
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Responsives Design für kleine Bildschirme */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div>Begriff 1</div>
-        <div>Begriff 2</div>
-        <div>Begriff 3</div>
-    </header>
+
+<header>
+    <div class="logo">Meine Webseite</div>
+    <nav>
+        <ul>
+            <li><a href="#home">Startseite</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#services">Dienstleistungen</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Hauptinhalt der Seite -->
+    <section id="home">
+        <h1>Willkommen auf unserer Startseite</h1>
+        <p>Hier finden Sie alle Informationen, die Sie benötigen.</p>
+    </section>
+
+    <section id="about">
+        <h2>Über uns</h2>
+        <p>Erfahren Sie mehr über unser Unternehmen.</p>
+    </section>
+
+    <section id="services">
+        <h2>Dienstleistungen</h2>
+        <p>Unsere angebotenen Dienstleistungen im Überblick.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Wie Sie uns erreichen können.</p>
+    </section>
+</main>
+
 </body>
 </html>

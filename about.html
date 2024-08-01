@@ -49,6 +49,18 @@
         .menu-rtl nav {
             order: 2; 
         }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .menu {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+        }
     </style>
 </head>
 <body>
@@ -57,13 +69,12 @@
         <img class="h-8 xl:h-12" src="Logos/safeworld.png" alt="Logo"></a>
 <header>
     <nav>
-         <b>
-            <div><a href="company.html">Unsere CO2-Ergebnisse (Firmen)</a></div>
-            <div><a href="country.html">Unsere CO2-Ergebnisse (Länder)</a></div>
+        <b>
+            <div><a href="table.html">Unsere CO2-Ergebnisse</a></div>
             <div><a href="products.html">Unsere Produkte</a></div>
             <div><a href="about.html">Über uns</a></div>
             <div><input type="text" name="suche" placeholder="Suche"></div>
-        </b>    
+        </b>   
     </nav>
 </header>
 

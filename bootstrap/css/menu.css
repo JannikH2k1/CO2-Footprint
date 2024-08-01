@@ -1,0 +1,27 @@
+.menu {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.menu.left {
+    left: 0;
+}
+
+.menu.right {
+    right: 0;
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
