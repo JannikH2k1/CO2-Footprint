@@ -5,21 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CO2-Footprint</title>
     <link href="bootstrap/css/bootstrap.css.map" rel="stylesheet">
-    <style>
+    <style> 
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 2%;
+            padding: 2%;
         }
         header{
             display: flex;
-            justify-content: space-between;
-            background-color: #333;
-            color: rgb(255, 255, 255);
-            padding: 10px;
-        }
-        header div {
-            flex: 1;
+            background-color: rgb(136, 201, 136);
+            padding: 5px;
             text-align: center;
         }
         footer {
@@ -28,39 +23,34 @@
             text-align: center;
             padding: 10px;
         }
-        .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
         nav {
             flex: 1;
-            min-width: 200px;
             background-color: #f4f4f4;
-            padding: 20px;
-            margin: 10px;
+            padding: 1%;
+            margin: 1%;
+        }
+        .container {
+            display: flex;
         }
         .content {
             flex: 3;
-            min-width: 300px;
-            padding: 20px;
-            margin: 10px;
-        }
-        .menu-rtl nav {
-            order: 2; 
+            padding: 2%;
+            margin: 2%;
         }
         @media (max-width: 768px) {
             .container {
-                width: 100%;
-                height: auto;
-                position: static;  
+                flex-direction: column;
             }
-            .menu {
+            .content {
                 width: 100%;
-                height: auto;
-                position: static;
-                color: #333;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                width: 100%;
             }
         }
     </style>
@@ -82,8 +72,8 @@
 </header>
 
 <h2>Wir müssen etwas ändern! </h2>
-<div style= "width: fit-content; height: fit-content;" class="container">
-    <nav id="menu" class="menu">
+<div class="container">
+    <nav>
         <ul>
             <li><a href="#CO2-Fußabdruck?">Was ist der CO2-Fußabdruck?</a></li>
             <li><a href="#verkleinern?">Wie können wir unseren eigenen CO2-Fußabdruck verkleinern?</a></li>
@@ -136,10 +126,9 @@
         <p><h3 id="Meinung!">Teilen Sie uns Ihre Meinung mit!</h3></p>
         <p>Wir nehmen Ihre Meinung sehr ernst. Gerne können Sie uns kontaktieren für mehr Informationen oder falls Sie einer anderen Meinung sind und uns diese mitteilen möchten.</p>
         <a href="contact.html">Kontakt</a> 
-        
     </div>
-    <script src="menu.js"></script>
 </div>
+
 <footer>
 So erreichen Sie uns:
         <li class="d-inline"><a href="https://www.instagram.com/jannikh2k1/">Instagram</a></li>
@@ -151,14 +140,17 @@ So erreichen Sie uns:
         <li><a href="privacy.html">Datenschutz</a></li>
         <li><a href="imprint.html">Impressum</a></li>
 </footer>
-
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const isRTL = document.documentElement.lang === "ar" || document.documentElement.lang === "he";
-        if (isRTL) {
-            document.body.classList.add("menu-rtl");
-        }
-    });
+    const userLang = navigator.language || navigator.userLanguage; 
+    const htmlElement = document.documentElement;
+    const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+    if (rtlLanguages.includes(userLang.split('-')[0])) {
+        htmlElement.setAttribute('dir', 'rtl');
+        htmlElement.setAttribute('lang', userLang);
+    } else {
+        htmlElement.setAttribute('dir', 'ltr');
+        htmlElement.setAttribute('lang', userLang);
+    }
 </script>
 </body>
 </html>

@@ -7,19 +7,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 2%;
+            padding: 2%;
         }
         header{
             display: flex;
-            justify-content: space-between;
+            background-color: rgb(136, 201, 136);
+            padding: 5px;
+            text-align: center;
+        }
+        footer {
             background-color: #333;
-            color: rgb(255, 255, 255);
+            color: white;
+            text-align: center;
             padding: 10px;
         }
-        header div {
+        nav {
             flex: 1;
-            text-align: center;
+            background-color: #f4f4f4;
+            padding: 1%;
+            margin: 1%;
         }
         #filterInput {
             margin-bottom: 20px;
@@ -28,34 +35,6 @@
             max-width: 300px;
             border: 1px solid #ddd;
             border-radius: 5px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        nav {
-            flex: 1;
-            min-width: 200px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin: 10px;
-        }
-        .content {
-            flex: 3;
-            min-width: 300px;
-            padding: 20px;
-            margin: 10px;
-        }
-        .menu-rtl nav {
-            order: 2; 
         }
         table {
             width: 100%;
@@ -71,16 +50,28 @@
         th {
             cursor: pointer;
         }
+        .container {
+            display: flex;
+        }
+        .content {
+            flex: 3;
+            padding: 2%;
+            margin: 2%;
+        }
         @media (max-width: 768px) {
             .container {
-                width: 100%;
-                height: auto;
-                position: static;
+                flex-direction: column;
             }
-            .menu {
+            .content {
                 width: 100%;
-                height: auto;
-                position: static;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                width: 100%;
             }
         }
     </style>
@@ -95,11 +86,9 @@
                     <div><a href="table.html">Unsere CO2-Ergebnisse</a></div>
                     <div><a href="products.html">Unsere Produkte</a></div>
                     <div><a href="about.html">Über uns</a></div>
-                    <div><input type="text" id="filterInput" name="suche" placeholder="Suche" onkeyup="filterContent()"></div>
                  </b>  
             </nav>
         </header>
-
 <h2>Wir müssen etwas ändern! </h2>
 <div class="container">
     <nav>
@@ -203,15 +192,7 @@ So erreichen Sie uns:
                 }
             }
         }
-
     }
-    document.addEventListener("DOMContentLoaded", () => {
-        const isRTL = document.documentElement.lang === "ar" || document.documentElement.lang === "he";
-        if (isRTL) {
-            document.body.classList.add("menu-rtl");
-        }
-    });
-
     function filterTable() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
@@ -234,10 +215,18 @@ So erreichen Sie uns:
     }
     
 }
-
-
 </script>
-
-
+<script>
+    const userLang = navigator.language || navigator.userLanguage; 
+    const htmlElement = document.documentElement;
+    const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+    if (rtlLanguages.includes(userLang.split('-')[0])) {
+        htmlElement.setAttribute('dir', 'rtl');
+        htmlElement.setAttribute('lang', userLang);
+    } else {
+        htmlElement.setAttribute('dir', 'ltr');
+        htmlElement.setAttribute('lang', userLang);
+    }
+</script>
 </body>
 </html>

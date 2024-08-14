@@ -7,18 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 2%;
+            padding: 2%;
         }
         header{
             display: flex;
-            justify-content: space-between;
-            background-color: #333;
-            color: rgb(255, 255, 255);
-            padding: 10px;
-        }
-        header div {
-            flex: 1;
+            background-color: rgb(136, 201, 136);
+            padding: 5px;
             text-align: center;
         }
         footer {
@@ -27,38 +22,34 @@
             text-align: center;
             padding: 10px;
         }
-        .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
         nav {
             flex: 1;
-            min-width: 200px;
             background-color: #f4f4f4;
-            padding: 20px;
-            margin: 10px;
+            padding: 1%;
+            margin: 1%;
+        }
+        .container {
+            display: flex;
         }
         .content {
             flex: 3;
-            min-width: 300px;
-            padding: 20px;
-            margin: 10px;
-        }
-        .menu-rtl nav {
-            order: 2; 
+            padding: 2%;
+            margin: 2%;
         }
         @media (max-width: 768px) {
             .container {
-                width: 100%;
-                height: auto;
-                position: static;
+                flex-direction: column;
             }
-            .menu {
+            .content {
                 width: 100%;
-                height: auto;
-                position: static;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                width: 100%;
             }
         }
     </style>
@@ -73,7 +64,6 @@
             <div><a href="table.html">Unsere CO2-Ergebnisse</a></div>
             <div><a href="products.html">Unsere Produkte</a></div>
             <div><a href="about.html">Über uns</a></div>
-            <div><input type="text" name="suche" placeholder="Suche"></div>
         </b> 
     </nav>
 </header>
@@ -110,14 +100,17 @@ So erreichen Sie uns:
     <li><a href="privacy.html">Datenschutz</a></li>
         <li><a href="imprint.html">Impressum</a></li>
 </footer>
-
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const isRTL = document.documentElement.lang === "ar" || document.documentElement.lang === "he";
-        if (isRTL) {
-            document.body.classList.add("menu-rtl");
-        }
-    });
+    const userLang = navigator.language || navigator.userLanguage; 
+    const htmlElement = document.documentElement;
+    const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+    if (rtlLanguages.includes(userLang.split('-')[0])) {
+        htmlElement.setAttribute('dir', 'rtl');
+        htmlElement.setAttribute('lang', userLang);
+    } else {
+        htmlElement.setAttribute('dir', 'ltr');
+        htmlElement.setAttribute('lang', userLang);
+    }
 </script>
 </body>
 </html>
